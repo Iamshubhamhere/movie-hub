@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/movie-hub/static/js/main.ec902504.js",
+    "index.html": "/movie-hub/index.html",
+    "main.ec902504.js.map": "/movie-hub/static/js/main.ec902504.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ec902504.js"
+  ]
+}
