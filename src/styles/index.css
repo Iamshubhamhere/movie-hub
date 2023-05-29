@@ -3,7 +3,7 @@
 :root {
   --app-dark-bg: #1a1d28;
   --app-green: #33ab4e;
-  --app-purple: #833cff;
+  /* --app-purple: #833cff; */
   --app-orange: #ff833c;
   --app-blue: #3c57ff;
   --app-blue-hover: #364ee6;
@@ -17,13 +17,14 @@
 .container {
     width: min(100% - 70px, 1280px);
     margin-inline: auto;
-    height: 100vh;
+    
   }
 
 body {
-  background-color: #1a1c24;
-
+  background-color: #181818;
+  
 }
+
 
 /* ------------------------
   ---------Header--------- 
@@ -40,7 +41,8 @@ header{
   height: 65px;
   background-color: transparent;
   display: grid;
-  
+  position: sticky;
+  z-index: 9999;
   font-size: 45px;
   font-weight: 800;
   color: var(--app-dark-bg);
@@ -51,6 +53,7 @@ header{
   display: flex;
   justify-content: space-between;
   line-height: 65px;
+  color: #3a3b3c;
 }
 
 .heading ul {
@@ -79,8 +82,9 @@ header{
 }
 
 nav ul li + li {
-  margin-left: 20px;
+  margin-left: 25px;
 }
+
 span {
   color: var(--app-blue);
 }
@@ -243,34 +247,154 @@ label{
   }
 
 
+/* ------------------------
+  --Movies Js Start here--- 
+  ------------------------*/
+
+p{
+  color: var(--app-white);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+  .sortBtn {
+    text-align: right;
+}
+.movie-list {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr)); 
+  gap: 30px;
+  place-items: center;
+}
+
+.movie-list p {
+  color: var(--app-green);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+}
+.movieItem {
+  padding: 3px;
+ 
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.movieItem:hover {
+  animation: pop 0.5s linear 1;
+}
+
+@keyframes pop {
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.mtitle{
+  font-size: 14px;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+a{
+  text-decoration: none;
+  color: var(--app-white);
+}
+a:hover{
+  color: var(--app-blue-hover);
+}
+
+/* ------------------------
+  --Details of the movies--- 
+  ------------------------*/
+ 
+.movie .image {
+  width:340px;
+  border-radius: 15px;
+}
+
+.movie-info{
+  display: grid;
+  grid-template-columns: 1fr 2fr
+  
+}
 
 
 
+ .title-info {
+  display: flex;
+  color: var(--app-white);
+  margin-top: 17px;
+  margin-bottom: 10px;
 
+}
 
+.description  {
+  font-size: 1.5rem;
+}
 
+.title-info p {
+  margin-right: 10px;
+}
+.movie h2{
+  font-size: 2.5rem;
+  color: var(--app-white);
+}
 
+.movie-info p{
+  color: var(--app-white);
+}
 
+.genre{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
+.genre p{
+  margin-right: 40px;
+  border: 1px dashed var(--app-red);
+  border-radius: 10px;
+  width: 100px;
+  text-align: center;
+  padding: 7px 0;
+}
 
+input[type=button ]{
+  width: 120px;
+  height: 40px;
+  margin-top: 20px;
+  height: 42x;
+  border-radius: 10px;
+  background-color: var(--app-lightBlue);
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  border-left: 15px;
+  transition: all 0.25s ease-in-out;
+}
 
+input[type=button ]:hover{
+  border: 1px solid var(--app-white);
 
+}
 
+.movie {
+  height: calc(100vh - 110px);
+  display: grid;
+  place-items: left;
+  place-content: center;
+  color: var(--app-light-gray);
+  
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.image img {
+  border-radius: 5px;
+}
 
 
 
@@ -303,11 +427,15 @@ footer {
   position: absolute;
   width: 100%;
   background-color: transparent;
+  height: 74px;
+  z-index: 9999;
+
 }
 
 footer .flex {
   display: flex;
   justify-content: space-between;
+  height: 74px;
 }
 .social {
   display: flex;
@@ -315,6 +443,7 @@ footer .flex {
 }
 footer p {
   color: var(--app-white);
+  height: 74px;
 }
 .social a {
   width: 45px;
@@ -333,7 +462,7 @@ footer p {
 }
 
 .social a:hover {
-  transform: scale(1.3);
+  transform: scale(1.1);
   transition: 0.3s ease-in-out;
   color: var(--app-darkBlue);
 }
@@ -344,4 +473,5 @@ footer p {
   font-size: 25px;
   letter-spacing: 0.4px;
   font-weight: 600;
+  height: 74px;
 }

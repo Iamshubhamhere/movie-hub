@@ -1,5 +1,5 @@
 
-
+import { Link } from "react-router-dom";
 function Header() {
   
     return (
@@ -9,10 +9,12 @@ function Header() {
            <h1>Movies-<span>Hub</span></h1>
             <nav>
              <ul>
-               <li>Watch Now</li>
-               <li>Upcoming Movies</li>
-               <li>Support</li>
-               <li>Contact Us</li>
+               <li><Link to="/movie-hub">Movies</Link></li>
+               <li ><Link to="/NotFound">Upcoming movies</Link></li>
+               
+               <li><Link to="/New">Add movies</Link></li>
+               
+               <li><Link to="/NotFound">Contact us</Link></li>
              </ul>
             </nav>
          </div>
